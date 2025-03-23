@@ -45,6 +45,7 @@ app.use(`/`, shopRouter);
 app.use(`/`, searchRouter);
 app.use(`/admin`, adminRouter);
 
+
 //Listening to port
 app.listen(port, () => {
     console.log(`The server is running on port ${port}`)
