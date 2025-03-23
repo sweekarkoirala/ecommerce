@@ -8,7 +8,7 @@ const cors = require('cors');
 const errorHandler = require('./build/error-handler')
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+const session = require('express-session'); 
 
 //Configuring the enviroments file and turning it to constant
 require('dotenv/config');
@@ -51,7 +51,7 @@ app.listen(port, () => {
     console.log(`The server is running on port ${port}`)
     
     //Check if the database is working fine
-    mongoose.connect("mongodb+srv://22054440:Zffw2uw6EAdFJU18@cluster0.z88or.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=cluster0")
+    mongoose.connect(process.env.MONGODB_URL)
     .then(() => {
         console.log('Database connection is running')
     })
